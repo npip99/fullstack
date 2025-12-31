@@ -1,0 +1,4 @@
+# Files to include in cli/ide tools, but not in .gitignore
+# E.g. fzf
+!credentials/*
+!tmp/*

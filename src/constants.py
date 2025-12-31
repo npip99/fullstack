@@ -1,0 +1,2 @@
+ERROR_PATH = "/error"
+AUTH_REDIRECT_PATH = "/"

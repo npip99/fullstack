@@ -1,0 +1,16 @@
+{
+    "include": [
+        "src",
+        "alembic",
+        "tests"
+    ],
+    "reportUnreachable": "warning",
+    "reportUnusedImport": "warning",
+    "reportUnusedVariable": "warning",
+    "reportUnusedParameter": "none",
+    "reportUnusedFunction": "none",
+    "reportUnusedCallResult": "none",
+    "reportCallInDefaultInitializer": false,
+    "reportExplicitAny": false,
+    "reportAny": false
+}

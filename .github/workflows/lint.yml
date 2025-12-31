@@ -1,0 +1,36 @@
+name: Lint
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    name: Lint & Alembic
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install the latest version of uv and set the python version to 3.12
+        uses: astral-sh/setup-uv@v4
+        with:
+          python-version: "3.12"
+      - name: Copy credentials.toml and run setup.sh
+        run: |
+          cp ./credentials/credentials.example.toml ./credentials/credentials.toml
+          ./setup.sh
+      - name: Run lint.sh
+        run: |
+          ./lint.sh --check
+      - name: Test alembic migrations
+        run: |
+          . .venv/bin/activate
+          alembic check
+          alembic downgrade base
+          alembic upgrade head
+          alembic check

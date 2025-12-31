@@ -1,0 +1,24 @@
+# General
+*.swp
+*.swo
+.DS_Store
+
+# Javascript
+node_modules
+frontend-build
+
+# Python
+*.egg-info
+.venv
+__pycache__
+
+# Ignored
+tmp
+*.log
+logs
+screenlog.*
+.cache
+
+# Credentials/Config
+credentials/*
+!credentials/credentials.example.toml

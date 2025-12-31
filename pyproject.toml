@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=73"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "src"
+version = "1.0.0"
+description = "This is the fullstack repository"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Nicholas Pipitone", email = "npip99@gmail.com" }]
+dependencies = [
+    "pydantic==2.12.5",
+    "apscheduler==3.11.2",
+    "fastapi[all]==0.128.0",
+    "sqlalchemy[asyncio]==2.0.45",
+    "asyncpg==0.31.0",
+    "uvicorn==0.40.0",
+    "alembic==1.17.2",
+    "python-jose==3.5.0",
+    "tomlkit==0.13.3",
+    "aiofiles==25.1.0",
+    "aiosmtplib==5.0.0",
+    "httpx[http2]==0.28.1",
+
+    # Development
+    "watchfiles==1.1.1",
+    "basedpyright==1.36.2",
+    "ruff==0.14.10",
+
+    # Testing
+    "pytest==9.0.2",
+    "pytest-asyncio==1.3.0",
+    "pytest-postgresql==7.0.2",
+
+    # Types
+    "asyncpg-stubs==0.31.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+addopts = "-vv -x"
+asyncio_mode = "auto"
+pythonpath = ["."]
+asyncio_default_fixture_loop_scope = "session"
+filterwarnings = [
+    "ignore::PendingDeprecationWarning:starlette.*:",
+    "ignore::DeprecationWarning:jose.*:",
+]

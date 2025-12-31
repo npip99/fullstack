@@ -1,0 +1,26 @@
+<svg
+  width="240"
+  height="64"
+  viewBox="0 0 240 64"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Generic website logo"
+>
+  <!-- Icon -->
+  <g transform="translate(0, 8)">
+    <circle cx="24" cy="24" r="20" fill="#2563eb" />
+    <rect x="20" y="12" width="8" height="24" rx="4" fill="#ffffff" />
+  </g>
+
+  <!-- Text -->
+  <text
+    x="64"
+    y="40"
+    font-family="Inter, Arial, sans-serif"
+    font-size="24"
+    font-weight="600"
+    fill="#ffffff"
+  >
+    App Name
+  </text>
+</svg>
